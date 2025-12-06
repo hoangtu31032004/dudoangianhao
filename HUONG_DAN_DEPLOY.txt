@@ -1,0 +1,98 @@
+═══════════════════════════════════════════════════════════════
+  HƯỚNG DẪN MỞ WEB BẰNG LINK CÔNG KHAI
+═══════════════════════════════════════════════════════════════
+
+CÓ 2 CÁCH CHÍNH:
+
+┌─────────────────────────────────────────────────────────────┐
+│ CÁCH 1: STREAMLIT CLOUD (KHUYẾN NGHỊ - MIỄN PHÍ)            │
+└─────────────────────────────────────────────────────────────┘
+
+Bước 1: Đẩy code lên GitHub
+  1. Tạo tài khoản GitHub (nếu chưa có)
+  2. Tạo repository mới
+  3. Mở PowerShell/CMD trong thư mục dự án và chạy:
+     
+     git init
+     git add .
+     git commit -m "Initial commit"
+     git branch -M main
+     git remote add origin https://github.com/TEN_USER/TEN_REPO.git
+     git push -u origin main
+
+Bước 2: Deploy lên Streamlit Cloud
+  1. Truy cập: https://share.streamlit.io/
+  2. Đăng nhập bằng GitHub
+  3. Click "New app"
+  4. Chọn repository vừa tạo
+  5. Main file path: app.py
+  6. Click "Deploy"
+
+  ✅ Sau khi deploy xong, bạn sẽ có link dạng:
+     https://TEN_APP.streamlit.app
+
+  ⚠️ Link này sẽ hoạt động mãi mãi và ai cũng truy cập được!
+
+
+┌─────────────────────────────────────────────────────────────┐
+│ CÁCH 2: NGROK (NHANH - TẠM THỜI)                            │
+└─────────────────────────────────────────────────────────────┘
+
+Bước 1: Tải và cài đặt ngrok
+  1. Truy cập: https://ngrok.com/download
+  2. Tải bản Windows
+  3. Giải nén file ngrok.exe vào thư mục dự án
+     HOẶC thêm vào PATH để dùng ở bất kỳ đâu
+
+Bước 2: Chạy ứng dụng
+  Có 2 cách:
+
+  CÁCH A: Chạy thủ công
+    1. Mở Terminal 1, chạy:
+       streamlit run app.py
+    
+    2. Mở Terminal 2, chạy:
+       ngrok http 8501
+    
+    3. Copy link từ ngrok (dạng: https://xxxx.ngrok.io)
+
+  CÁCH B: Chạy tự động (Windows)
+    1. Double-click file: run_public.bat
+    2. Đợi vài giây
+    3. Xem link công khai trong cửa sổ Ngrok
+
+  ⚠️ Lưu ý: Link ngrok sẽ thay đổi mỗi lần chạy
+     (trừ khi dùng tài khoản ngrok có trả phí)
+
+
+═══════════════════════════════════════════════════════════════
+  SO SÁNH 2 CÁCH
+═══════════════════════════════════════════════════════════════
+
+STREAMLIT CLOUD:
+  ✅ Miễn phí
+  ✅ Link cố định, không đổi
+  ✅ Hoạt động 24/7
+  ✅ Không cần máy tính của bạn bật
+  ⚠️ Cần tài khoản GitHub
+
+NGROK:
+  ✅ Nhanh, không cần đăng ký (bản miễn phí)
+  ✅ Dễ setup
+  ⚠️ Link thay đổi mỗi lần chạy
+  ⚠️ Cần máy tính của bạn bật và chạy
+  ⚠️ Tốc độ phụ thuộc vào internet của bạn
+
+
+═══════════════════════════════════════════════════════════════
+  KHUYẾN NGHỊ
+═══════════════════════════════════════════════════════════════
+
+Nếu muốn link cố định và hoạt động lâu dài:
+  → Dùng STREAMLIT CLOUD
+
+Nếu chỉ cần test nhanh hoặc demo tạm thời:
+  → Dùng NGROK
+
+═══════════════════════════════════════════════════════════════
+
